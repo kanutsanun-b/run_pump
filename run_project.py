@@ -47,21 +47,18 @@ sensor = Adafruit_DHT.DHT22
 # listen for changing edge on toggle switch (both directions)
 # event will interrupt the program and call the toggleLine function
 GPIO.add_event_detect(pin_switch, GPIO.BOTH, callback=toggle_switch, bouncetime=300)
-    
-if __name__ == '__main__':
-    try:
-        while True:
-            humidity, temperature = Adafruit_DHT.read_retry(sensor, pin_dht)
-            if humidity is not None and temperature is not None:
-                #str_temp = print('Temp: {}'.format(temperature))
-                #str_rh = print('Rh: ={}'.format(humidity))
-                str_temp = str(temperature)
-                str_rh = str(humidity)
-                lcd.lcd_display_string(str_temp, 2)
-                lcd.lcd_display_string(str_rh, 3)
-                time.sleep(10)
-            else:
-                pass
-    
-    except KeyboardInterrupt:
-        GPIO.cleanup()
+
+try:     
+    while True:
+        humidity, temperature = Adafruit_DHT.read_retry(sensor, pin_dht)
+        if humidity is not None and temperature is not None:
+            str_temp = str(temperature)
+            str_rh = str(humidity)
+            lcd.lcd_display_string(str_temp, 2)
+            lcd.lcd_display_string(str_rh, 3)
+            time.sleep(10)
+        else:
+            pass
+            
+except KeyboardInterrupt:
+    GPIO.cleanup()
