@@ -53,8 +53,8 @@ if __name__ == '__main__':
         while True:
             humidity, temperature = Adafruit_DHT.read_retry(sensor, pin_dht)
             if humidity is not None and temperature is not None:
-                str_temp = print('Temp: {0:0.1f}'.format(temperature))
-                str_rh = print('Rh: ={1:0.1f}'.format(humidity))
+                str_temp = print('Temp: {}'.format(temperature))
+                str_rh = print('Rh: ={}'.format(humidity))
                 lcd.lcd_display_string(str_temp, 2)
                 lcd.lcd_display_string(str_rh, 3)
                 time.sleep(10)
