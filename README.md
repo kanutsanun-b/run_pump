@@ -26,7 +26,7 @@ sudo pip3 install Adafruit_DHT
 ## Usage
 ```python
 Crontab...
-@reboot sleep 300 && /home/wwwjobs/clean-static-cache.sh
+@reboot sleep 60 && /home/pi/run_pump/run_project.py
 
 index_rh = 47 #If Humidity is below than this value, pump will be started.
 logfile = 'C:/Users/kanut/OneDrive/Documents_KB/python/RaspiZero_project/testlog/'
