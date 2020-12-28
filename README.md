@@ -1,12 +1,10 @@
-﻿# Run_pump version 0.0.1
+﻿# Run_pump version 1.0.0
 !!!For Raspberry Pi zero, Automatic pump depen on humidity.
+Datalog pattern = Timestamp, Temperature, Humidity, QNH
 
 ## Installation
 ```python
 git clone https://github.com/kanutsanun-b/run_pump.git
-
-#Pressure to Mean sea level ... QNH
-pip install pressure2qnh
 
 #BMP280
 git clone https://github.com/pimoroni/enviro-phat.git
